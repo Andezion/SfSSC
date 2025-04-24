@@ -81,6 +81,34 @@ public class Task extends Application
         grid.add(new Label("ОКЗ"), 0, 8);
         grid.add(okz, 1, 8);
 
+        TextField x_dd = new TextField();
+        grid.add(new Label("x''d"), 0, 9);
+        grid.add(x_dd, 1, 9);
+
+        TextField x_d = new TextField();
+        grid.add(new Label("x'd"), 0, 10);
+        grid.add(x_d, 1, 10);
+
+        TextField x_d_long = new TextField();
+        grid.add(new Label("xd"), 0, 11);
+        grid.add(x_d_long, 1, 11);
+
+        TextField x_qq = new TextField();
+        grid.add(new Label("x''q"), 0, 12);
+        grid.add(x_qq, 1, 12);
+
+        TextField x_q = new TextField();
+        grid.add(new Label("xq"), 0, 13);
+        grid.add(x_q, 1, 13);
+
+        TextField x2 = new TextField();
+        grid.add(new Label("x2"), 0, 14);
+        grid.add(x2, 1, 14);
+
+        TextField x0 = new TextField();
+        grid.add(new Label("x0"), 0, 15);
+        grid.add(x0, 1, 15);
+
         centerPanel.getChildren().addAll(grid);
     }
 
