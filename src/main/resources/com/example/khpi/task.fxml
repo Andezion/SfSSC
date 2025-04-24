@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.khpi.Task">
+    <left>
+        <VBox spacing="10" style="-fx-padding: 10; -fx-background-color: #efed93;" prefWidth="200">
+
+        </VBox>
+    </left>
+
+    <center>
+        <VBox fx:id="centerPanel" spacing="10" style="-fx-padding: 10; -fx-background-color: #75f375;" prefWidth="900">
+
+        </VBox>
+    </center>
+
+    <right>
+        <VBox fx:id="rightPanel" spacing="10" style="-fx-padding: 10; -fx-background-color: #7bf3e9;" prefWidth="100">
+            <Button text="Добавить&#10;генератор" styleClass="btn-new" onAction="#onAddGeneratorClick"/>
+        </VBox>
+    </right>
+</BorderPane>
