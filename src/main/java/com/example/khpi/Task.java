@@ -50,10 +50,20 @@ public class Task extends Application
         grid.add(name_of_generator, 1, 0);
 
         TextField s_nom = new TextField();
-        grid.add(new Label("Sном(МВ*А)"), 0, 1);
+        grid.add(new Label("Sном (МВ * А)"), 0, 1);
         grid.add(s_nom, 1, 1);
 
         TextField p_nom = new TextField();
+        grid.add(new Label("Pном (МВт)"), 0, 2);
+        grid.add(p_nom, 1, 2);
+
+        TextField cos_f_nom = new TextField();
+        grid.add(new Label("cosφном"), 0, 3);
+        grid.add(cos_f_nom, 1, 3);
+
+        TextField u_nom = new TextField();
+        grid.add(new Label("Uном (кВ)"), 0, 4);
+        grid.add(u_nom, 1, 4);
 
         centerPanel.getChildren().addAll(grid);
     }
