@@ -65,6 +65,22 @@ public class Task extends Application
         grid.add(new Label("Uном (кВ)"), 0, 4);
         grid.add(u_nom, 1, 4);
 
+        TextField i_nom = new TextField();
+        grid.add(new Label("Iном (кА)"), 0, 5);
+        grid.add(i_nom, 1, 5);
+
+        TextField n_nom = new TextField();
+        grid.add(new Label("nном (об/мин)"), 0, 6);
+        grid.add(n_nom, 1, 6);
+
+        TextField n_ug_n_no = new TextField();
+        grid.add(new Label("nуг/nном"), 0, 7);
+        grid.add(n_ug_n_no, 1, 7);
+
+        TextField okz = new TextField();
+        grid.add(new Label("ОКЗ"), 0, 8);
+        grid.add(okz, 1, 8);
+
         centerPanel.getChildren().addAll(grid);
     }
 
