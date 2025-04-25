@@ -7,6 +7,7 @@
     -fx-border-radius: 10;
     -fx-padding: 6 12;
     -fx-font-size: 10px;
+    -fx-font-weight: bold;
     -fx-cursor: hand;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 2, 0.0, 0, 1);
     -fx-transition: all 0.2s ease-in-out;
@@ -20,5 +21,33 @@
     -fx-effect: dropshadow(three-pass-box, rgba(65, 93, 152, 0.8), 6, 0.0, 0, 2);
 }
 
+.text_field_generator
+{
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 5 10;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0.3, 2, 2);
+}
 
+.label_generator
+{
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-padding: 5 15;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}
 
+.helper_label_generator
+{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}

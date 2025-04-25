@@ -37,6 +37,27 @@ public class Task extends Application
         stage.show();
     }
 
+    private TextField create_textfield()
+    {
+        TextField tf = new TextField();
+        tf.getStyleClass().add("text_field_generator");
+        return tf;
+    }
+
+    private Label create_label(String text)
+    {
+        Label label = new Label(text);
+        label.getStyleClass().add("label_generator");
+        return label;
+    }
+
+    private Label create_helper_label(String text)
+    {
+        Label label = new Label(text);
+        label.getStyleClass().add("helper_label_generator");
+        return label;
+    }
+
     @FXML
     private void onAddGeneratorClick()
     {
@@ -51,15 +72,15 @@ public class Task extends Application
         ScrollPane scroll_pane = new ScrollPane(grid);
         scroll_pane.setId("my-scroll");
 
-        TextField name_of_generator = new TextField();
-        grid.add(new Label("Тип генератора"), 0, 0);
-        grid.add(name_of_generator, 1, 0);
-        grid.add(new Label("Впиши название генератора"), 2, 0);
+        grid.add(create_label("Тип генератора:"), 0, 0);
+        grid.add(create_textfield(), 1, 0);
+        grid.add(create_helper_label("Впиши название генератора"), 2, 0);
 
         // Параметры
         TextField s_nom = new TextField();
         grid.add(new Label("Sном (МВ * А)"), 0, 1);
         grid.add(s_nom, 1, 1);
+        grid.add(new Label("Впиши число, если дробное то используй - \".\""), 2, 1);
 
         TextField p_nom = new TextField();
         grid.add(new Label("Pном (МВт)"), 0, 2);
