@@ -21,6 +21,27 @@
     -fx-effect: dropshadow(three-pass-box, rgba(65, 93, 152, 0.8), 6, 0.0, 0, 2);
 }
 
+#save_gen
+{
+    -fx-background-color: #0B63F6;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 6 12;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 2, 0.0, 0, 1);
+    -fx-transition: all 0.2s ease-in-out;
+
+    -fx-pref-width: 80;
+    -fx-pref-height: 30;
+}
+#save_gen:hover
+{
+    -fx-effect: dropshadow(three-pass-box, rgba(65, 93, 152, 0.8), 6, 0.0, 0, 2);
+}
+
 .text_field_generator
 {
     -fx-background-color: white;

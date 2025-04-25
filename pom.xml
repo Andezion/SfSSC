@@ -16,9 +16,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>17.0.6</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.2</version> <!-- Используйте последнюю доступную версию -->
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
