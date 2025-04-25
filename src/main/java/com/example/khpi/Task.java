@@ -3,8 +3,10 @@ package com.example.khpi;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -44,6 +46,9 @@ public class Task extends Application
 
         grid.setHgap(10);
         grid.setVgap(10);
+        grid.setPadding(new Insets(10));
+
+        ScrollPane scroll_pane = new ScrollPane(grid);
 
         TextField name_of_generator = new TextField();
         grid.add(new Label("Тип генератора"), 0, 0);
@@ -109,7 +114,51 @@ public class Task extends Application
         grid.add(new Label("x0"), 0, 15);
         grid.add(x0, 1, 15);
 
-        centerPanel.getChildren().addAll(grid);
+        TextField t_d0 = new TextField();
+        grid.add(new Label("Td0 (с)"), 0, 16);
+        grid.add(t_d0, 1, 16);
+
+        TextField if_nom = new TextField();
+        grid.add(new Label("Ifном (А)"), 0, 17);
+        grid.add(if_nom, 1, 17);
+
+        TextField if_nom_ix = new TextField();
+        grid.add(new Label("Ifном/Ix (x)"), 0, 18);
+        grid.add(if_nom_ix, 1, 18);
+
+        TextField uf_nom = new TextField();
+        grid.add(new Label("Ufном (В)"), 0, 19);
+        grid.add(uf_nom, 1, 19);
+
+        TextField forcing_ratio = new TextField();
+        grid.add(new Label("Кратность\nфорсировки"), 0, 20);
+        grid.add(forcing_ratio, 1, 20);
+
+        TextField excitation_system = new TextField();
+        grid.add(new Label("Система\nвозбуждения"), 0, 21);
+        grid.add(excitation_system, 1, 21);
+
+        TextField n_percent = new TextField();
+        grid.add(new Label("ŋ (%)"), 0, 22);
+        grid.add(n_percent, 1, 22);
+
+        TextField j = new TextField();
+        grid.add(new Label("J (т * m2 * 0.25)"), 0, 23);
+        grid.add(j, 1, 23);
+
+        TextField mass_stator = new TextField();
+        grid.add(new Label("Масса ротора"), 0, 24);
+        grid.add(mass_stator, 1, 24);
+
+        TextField mass_rotor = new TextField();
+        grid.add(new Label("Масса статора"), 0, 25);
+        grid.add(mass_rotor, 1, 25);
+
+        TextField mass_total = new TextField();
+        grid.add(new Label("Масса общая"), 0, 26);
+        grid.add(mass_total, 1, 26);
+
+        centerPanel.getChildren().addAll(grid, scroll_pane);
     }
 
     public static void main(String[] args)
