@@ -55,6 +55,7 @@ public class Task extends Application
         grid.add(name_of_generator, 1, 0);
         grid.add(new Label("Впиши название генератора"), 2, 0);
 
+        // Параметры
         TextField s_nom = new TextField();
         grid.add(new Label("Sном (МВ * А)"), 0, 1);
         grid.add(s_nom, 1, 1);
@@ -87,6 +88,7 @@ public class Task extends Application
         grid.add(new Label("ОКЗ"), 0, 8);
         grid.add(okz, 1, 8);
 
+        // Индуктивные сопротивления
         TextField x_dd = new TextField();
         grid.add(new Label("x''d"), 0, 9);
         grid.add(x_dd, 1, 9);
@@ -115,10 +117,12 @@ public class Task extends Application
         grid.add(new Label("x0"), 0, 15);
         grid.add(x0, 1, 15);
 
+        // Время
         TextField t_d0 = new TextField();
         grid.add(new Label("Td0 (с)"), 0, 16);
         grid.add(t_d0, 1, 16);
 
+        // Возбуждение
         TextField if_nom = new TextField();
         grid.add(new Label("Ifном (А)"), 0, 17);
         grid.add(if_nom, 1, 17);
@@ -139,6 +143,7 @@ public class Task extends Application
         grid.add(new Label("Система\nвозбуждения"), 0, 21);
         grid.add(excitation_system, 1, 21);
 
+        // Коэффициенты
         TextField n_percent = new TextField();
         grid.add(new Label("ŋ (%)"), 0, 22);
         grid.add(n_percent, 1, 22);
@@ -147,6 +152,7 @@ public class Task extends Application
         grid.add(new Label("J (т * m2 * 0.25)"), 0, 23);
         grid.add(j, 1, 23);
 
+        // Масса
         TextField mass_stator = new TextField();
         grid.add(new Label("Масса ротора"), 0, 24);
         grid.add(mass_stator, 1, 24);
@@ -159,6 +165,8 @@ public class Task extends Application
         grid.add(new Label("Масса общая"), 0, 26);
         grid.add(mass_total, 1, 26);
 
+
+        // Размеры
         TextField stator_diameter = new TextField();
         grid.add(new Label("Диаметр статора\nпо корпусу"), 0, 27);
         grid.add(stator_diameter, 1, 27);
@@ -171,6 +179,7 @@ public class Task extends Application
         grid.add(new Label("Полная высота\n(длинна) генератора"), 0, 29);
         grid.add(generator_length, 1, 29);
 
+        // Параметры какие-то
         TextField execution_type = new TextField();
         grid.add(new Label("Исполнение"), 0, 30);
         grid.add(execution_type, 1, 30);
