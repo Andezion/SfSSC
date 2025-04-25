@@ -1,25 +1,17 @@
 package com.example.khpi;
 
-import javafx.animation.Animation;
-import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -312,14 +304,45 @@ public class Task extends Application
         centerPanel.getChildren().addAll(scroll_pane);
     }
 
+    private float parse_float(String value)
+    {
+        if (value == null || value.trim().isEmpty())
+        {
+            return (float) 0.0;
+        }
+        try
+        {
+            return Float.parseFloat(value);
+        }
+        catch (NumberFormatException e)
+        {
+            return (float) 0.0;
+        }
+    }
+
+    private int parse_int(String value)
+    {
+        if(value == null || value.trim().isEmpty())
+        {
+            return 0;
+        }
+        try
+        {
+            return Integer.parseInt(value);
+        }
+        catch (NumberFormatException e)
+        {
+            return 0;
+        }
+    }
+
     private void save_generator_to_database(List<TextField> into_database)
     {
         String url = "jdbc:postgresql://localhost:5432/KhPI";
         String user = "postgres";
         String password = "Ffdss321!";
 
-        // Пример получения данных из полей TextField
-        String name_of_generator = into_database.get(0).getText();
+        String type = into_database.get(0).getText();
         String s_nom = into_database.get(1).getText();
         String p_nom = into_database.get(2).getText();
         String cos_f_nom = into_database.get(3).getText();
@@ -355,43 +378,44 @@ public class Task extends Application
 
         try (Connection connection = DriverManager.getConnection(url, user, password))
         {
-            String query = "INSERT INTO generators (name_of_generator, s_nom, p_nom, cos_f_nom, u_nom, i_nom, n_nom, n_ug_n_no, okz, " +
+            String query = "INSERT INTO generators (type, s_nom, p_nom, cos_f_nom, u_nom, i_nom, n_nom, n_ug_n_no, okz, " +
                     "x_dd, x_d, x_d_long, x_qq, x_q, x2, x0, t_d0, if_nom, if_nom_ix, uf_nom, forcing_ratio, excitation_system, " +
                     "n_percent, j, mass_stator, mass_rotor, mass_total, stator_diameter, rotor_diameter, generator_length, " +
-                    "execution_type, exciter_type, turbine) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    "execution_type, exciter_type, turbine) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             try (PreparedStatement stmt = connection.prepareStatement(query))
             {
-                stmt.setString(1, name_of_generator);
-                stmt.setString(2, s_nom);
-                stmt.setString(3, p_nom);
-                stmt.setString(4, cos_f_nom);
-                stmt.setString(5, u_nom);
-                stmt.setString(6, i_nom);
-                stmt.setString(7, n_nom);
-                stmt.setString(8, n_ug_n_no);
-                stmt.setString(9, okz);
-                stmt.setString(10, x_dd);
-                stmt.setString(11, x_d);
-                stmt.setString(12, x_d_long);
-                stmt.setString(13, x_qq);
-                stmt.setString(14, x_q);
-                stmt.setString(15, x2);
-                stmt.setString(16, x0);
-                stmt.setString(17, t_d0);
-                stmt.setString(18, if_nom);
-                stmt.setString(19, if_nom_ix);
-                stmt.setString(20, uf_nom);
-                stmt.setString(21, forcing_ratio);
+                stmt.setString(1, type);
+                stmt.setFloat(2, parse_float(s_nom));
+                stmt.setFloat(3, parse_float(p_nom));
+                stmt.setFloat(4, parse_float(cos_f_nom));
+                stmt.setFloat(5, parse_float(u_nom));
+                stmt.setFloat(6, parse_float(i_nom));
+                stmt.setFloat(7, parse_float(n_nom));
+                stmt.setFloat(8, parse_float(n_ug_n_no));
+                stmt.setFloat(9, parse_float(okz));
+                stmt.setFloat(10, parse_float(x_dd));
+                stmt.setFloat(11, parse_float(x_d));
+                stmt.setFloat(12, parse_float(x_d_long));
+                stmt.setFloat(13, parse_float(x_qq));
+                stmt.setFloat(14, parse_float(x_q));
+                stmt.setFloat(15, parse_float(x2));
+                stmt.setFloat(16, parse_float(x0));
+                stmt.setFloat(17, parse_float(t_d0));
+                stmt.setFloat(18, parse_float(if_nom));
+                stmt.setFloat(19, parse_float(if_nom_ix));
+                stmt.setFloat(20, parse_float(uf_nom));
+                stmt.setFloat(21, parse_float(forcing_ratio));
                 stmt.setString(22, excitation_system);
-                stmt.setString(23, n_percent);
-                stmt.setString(24, j);
-                stmt.setString(25, mass_stator);
-                stmt.setString(26, mass_rotor);
-                stmt.setString(27, mass_total);
-                stmt.setString(28, stator_diameter);
-                stmt.setString(29, rotor_diameter);
-                stmt.setString(30, generator_length);
+                stmt.setFloat(23, parse_float(n_percent));
+                stmt.setFloat(24, parse_float(j));
+                stmt.setFloat(25, parse_float(mass_stator));
+                stmt.setFloat(26, parse_float(mass_rotor));
+                stmt.setFloat(27, parse_float(mass_total));
+                stmt.setInt(28, parse_int(stator_diameter));
+                stmt.setInt(29, parse_int(rotor_diameter));
+                stmt.setInt(30, parse_int(generator_length));
                 stmt.setString(31, execution_type);
                 stmt.setString(32, exciter_type);
                 stmt.setString(33, turbine);
