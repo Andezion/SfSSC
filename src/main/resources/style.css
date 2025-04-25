@@ -34,6 +34,7 @@
 
 .label_generator
 {
+    -fx-pref-width: 170px;
     -fx-background-color: #f0f0f0;
     -fx-border-color: #ccc;
     -fx-border-width: 1;
@@ -49,6 +50,19 @@
 {
     -fx-background-color: #7de38c;
     -fx-border-color: #3a7e44;
+    -fx-border-width: 1;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-padding: 5 15;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}
+
+.error_label_generator
+{
+    -fx-background-color: #e37d7d;
+    -fx-border-color: #7e3a3a;
     -fx-border-width: 1;
     -fx-border-radius: 15;
     -fx-background-radius: 15;
