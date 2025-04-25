@@ -49,6 +49,7 @@ public class Task extends Application
         grid.setPadding(new Insets(10));
 
         ScrollPane scroll_pane = new ScrollPane(grid);
+        scroll_pane.setId("my-scroll");
 
         TextField name_of_generator = new TextField();
         grid.add(new Label("Тип генератора"), 0, 0);
@@ -192,7 +193,7 @@ public class Task extends Application
         grid.add(new Label("Турбина"), 0, 32);
         grid.add(turbine, 1, 32);
 
-        centerPanel.getChildren().addAll(grid, scroll_pane);
+        centerPanel.getChildren().addAll(scroll_pane);
     }
 
     public static void main(String[] args)

@@ -14,7 +14,7 @@
     </left>
 
     <center>
-        <VBox fx:id="centerPanel" spacing="10" style="-fx-padding: 10; -fx-background-color: #75f375;" prefWidth="900">
+        <VBox fx:id="centerPanel" spacing="10" style="-fx-background-color: #75f375;" prefWidth="900">
 
         </VBox>
     </center>
