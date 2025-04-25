@@ -53,6 +53,7 @@ public class Task extends Application
         TextField name_of_generator = new TextField();
         grid.add(new Label("Тип генератора"), 0, 0);
         grid.add(name_of_generator, 1, 0);
+        grid.add(new Label("Впиши название генератора"), 2, 0);
 
         TextField s_nom = new TextField();
         grid.add(new Label("Sном (МВ * А)"), 0, 1);
@@ -157,6 +158,30 @@ public class Task extends Application
         TextField mass_total = new TextField();
         grid.add(new Label("Масса общая"), 0, 26);
         grid.add(mass_total, 1, 26);
+
+        TextField stator_diameter = new TextField();
+        grid.add(new Label("Диаметр статора\nпо корпусу"), 0, 27);
+        grid.add(stator_diameter, 1, 27);
+
+        TextField rotor_diameter = new TextField();
+        grid.add(new Label("Диаметр ротора"), 0, 28);
+        grid.add(rotor_diameter, 1, 28);
+
+        TextField generator_length = new TextField();
+        grid.add(new Label("Полная высота\n(длинна) генератора"), 0, 29);
+        grid.add(generator_length, 1, 29);
+
+        TextField execution_type = new TextField();
+        grid.add(new Label("Исполнение"), 0, 30);
+        grid.add(execution_type, 1, 30);
+
+        TextField exciter_type = new TextField();
+        grid.add(new Label("Тип возбудителя"), 0, 31);
+        grid.add(exciter_type, 1, 31);
+
+        TextField turbine = new TextField();
+        grid.add(new Label("Турбина"), 0, 32);
+        grid.add(turbine, 1, 32);
 
         centerPanel.getChildren().addAll(grid, scroll_pane);
     }
