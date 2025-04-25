@@ -72,145 +72,146 @@ public class Task extends Application
         ScrollPane scroll_pane = new ScrollPane(grid);
         scroll_pane.setId("my-scroll");
 
+        TextField name_of_generator = create_textfield();
         grid.add(create_label("Тип генератора:"), 0, 0);
-        grid.add(create_textfield(), 1, 0);
+        grid.add(name_of_generator, 1, 0);
         grid.add(create_helper_label("Впиши название генератора"), 2, 0);
 
         // Параметры
-        TextField s_nom = new TextField();
+        TextField s_nom = create_textfield();
         grid.add(new Label("Sном (МВ * А)"), 0, 1);
         grid.add(s_nom, 1, 1);
         grid.add(new Label("Впиши число, если дробное то используй - \".\""), 2, 1);
 
-        TextField p_nom = new TextField();
+        TextField p_nom = create_textfield();
         grid.add(new Label("Pном (МВт)"), 0, 2);
         grid.add(p_nom, 1, 2);
 
-        TextField cos_f_nom = new TextField();
+        TextField cos_f_nom = create_textfield();
         grid.add(new Label("cosφном"), 0, 3);
         grid.add(cos_f_nom, 1, 3);
 
-        TextField u_nom = new TextField();
+        TextField u_nom = create_textfield();
         grid.add(new Label("Uном (кВ)"), 0, 4);
         grid.add(u_nom, 1, 4);
 
-        TextField i_nom = new TextField();
+        TextField i_nom = create_textfield();
         grid.add(new Label("Iном (кА)"), 0, 5);
         grid.add(i_nom, 1, 5);
 
-        TextField n_nom = new TextField();
+        TextField n_nom = create_textfield();
         grid.add(new Label("nном (об/мин)"), 0, 6);
         grid.add(n_nom, 1, 6);
 
-        TextField n_ug_n_no = new TextField();
+        TextField n_ug_n_no = create_textfield();
         grid.add(new Label("nуг/nном"), 0, 7);
         grid.add(n_ug_n_no, 1, 7);
 
-        TextField okz = new TextField();
+        TextField okz = create_textfield();
         grid.add(new Label("ОКЗ"), 0, 8);
         grid.add(okz, 1, 8);
 
         // Индуктивные сопротивления
-        TextField x_dd = new TextField();
+        TextField x_dd = create_textfield();
         grid.add(new Label("x''d"), 0, 9);
         grid.add(x_dd, 1, 9);
 
-        TextField x_d = new TextField();
+        TextField x_d = create_textfield();
         grid.add(new Label("x'd"), 0, 10);
         grid.add(x_d, 1, 10);
 
-        TextField x_d_long = new TextField();
+        TextField x_d_long = create_textfield();
         grid.add(new Label("xd"), 0, 11);
         grid.add(x_d_long, 1, 11);
 
-        TextField x_qq = new TextField();
+        TextField x_qq = create_textfield();
         grid.add(new Label("x''q"), 0, 12);
         grid.add(x_qq, 1, 12);
 
-        TextField x_q = new TextField();
+        TextField x_q = create_textfield();
         grid.add(new Label("xq"), 0, 13);
         grid.add(x_q, 1, 13);
 
-        TextField x2 = new TextField();
+        TextField x2 = create_textfield();
         grid.add(new Label("x2"), 0, 14);
         grid.add(x2, 1, 14);
 
-        TextField x0 = new TextField();
+        TextField x0 = create_textfield();
         grid.add(new Label("x0"), 0, 15);
         grid.add(x0, 1, 15);
 
         // Время
-        TextField t_d0 = new TextField();
+        TextField t_d0 = create_textfield();
         grid.add(new Label("Td0 (с)"), 0, 16);
         grid.add(t_d0, 1, 16);
 
         // Возбуждение
-        TextField if_nom = new TextField();
+        TextField if_nom = create_textfield();
         grid.add(new Label("Ifном (А)"), 0, 17);
         grid.add(if_nom, 1, 17);
 
-        TextField if_nom_ix = new TextField();
+        TextField if_nom_ix = create_textfield();
         grid.add(new Label("Ifном/Ix (x)"), 0, 18);
         grid.add(if_nom_ix, 1, 18);
 
-        TextField uf_nom = new TextField();
+        TextField uf_nom = create_textfield();
         grid.add(new Label("Ufном (В)"), 0, 19);
         grid.add(uf_nom, 1, 19);
 
-        TextField forcing_ratio = new TextField();
+        TextField forcing_ratio = create_textfield();
         grid.add(new Label("Кратность\nфорсировки"), 0, 20);
         grid.add(forcing_ratio, 1, 20);
 
-        TextField excitation_system = new TextField();
+        TextField excitation_system = create_textfield();
         grid.add(new Label("Система\nвозбуждения"), 0, 21);
         grid.add(excitation_system, 1, 21);
 
         // Коэффициенты
-        TextField n_percent = new TextField();
+        TextField n_percent = create_textfield();
         grid.add(new Label("ŋ (%)"), 0, 22);
         grid.add(n_percent, 1, 22);
 
-        TextField j = new TextField();
+        TextField j = create_textfield();
         grid.add(new Label("J (т * m2 * 0.25)"), 0, 23);
         grid.add(j, 1, 23);
 
         // Масса
-        TextField mass_stator = new TextField();
+        TextField mass_stator = create_textfield();
         grid.add(new Label("Масса ротора"), 0, 24);
         grid.add(mass_stator, 1, 24);
 
-        TextField mass_rotor = new TextField();
+        TextField mass_rotor = create_textfield();
         grid.add(new Label("Масса статора"), 0, 25);
         grid.add(mass_rotor, 1, 25);
 
-        TextField mass_total = new TextField();
+        TextField mass_total = create_textfield();
         grid.add(new Label("Масса общая"), 0, 26);
         grid.add(mass_total, 1, 26);
 
 
         // Размеры
-        TextField stator_diameter = new TextField();
+        TextField stator_diameter = create_textfield();
         grid.add(new Label("Диаметр статора\nпо корпусу"), 0, 27);
         grid.add(stator_diameter, 1, 27);
 
-        TextField rotor_diameter = new TextField();
+        TextField rotor_diameter = create_textfield();
         grid.add(new Label("Диаметр ротора"), 0, 28);
         grid.add(rotor_diameter, 1, 28);
 
-        TextField generator_length = new TextField();
+        TextField generator_length = create_textfield();
         grid.add(new Label("Полная высота\n(длинна) генератора"), 0, 29);
         grid.add(generator_length, 1, 29);
 
         // Параметры какие-то
-        TextField execution_type = new TextField();
+        TextField execution_type = create_textfield();
         grid.add(new Label("Исполнение"), 0, 30);
         grid.add(execution_type, 1, 30);
 
-        TextField exciter_type = new TextField();
+        TextField exciter_type = create_textfield();
         grid.add(new Label("Тип возбудителя"), 0, 31);
         grid.add(exciter_type, 1, 31);
 
-        TextField turbine = new TextField();
+        TextField turbine = create_textfield();
         grid.add(new Label("Турбина"), 0, 32);
         grid.add(turbine, 1, 32);
 

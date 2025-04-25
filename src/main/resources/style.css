@@ -47,6 +47,12 @@
 
 .helper_label_generator
 {
+    -fx-background-color: #7de38c;
+    -fx-border-color: #3a7e44;
+    -fx-border-width: 1;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-padding: 5 15;
     -fx-font-size: 15px;
     -fx-font-weight: bold;
     -fx-text-fill: #000000;
