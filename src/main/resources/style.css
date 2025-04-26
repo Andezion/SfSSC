@@ -14,12 +14,16 @@
 
     -fx-pref-width: 80;
     -fx-pref-height: 50;
+    -fx-text-alignment: center;
+    -fx-content-display: center;
 }
 
 .btn-new:hover
 {
     -fx-effect: dropshadow(three-pass-box, rgba(65, 93, 152, 0.8), 6, 0.0, 0, 2);
 }
+
+
 
 #save_gen
 {
