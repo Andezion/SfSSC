@@ -231,6 +231,178 @@ public class Task extends Application
         grid.add(suma,1 ,22);
         grid.add(create_helper_label("Впиши цену"), 2, 22);
 
+        Button save_to_database = new Button("Сохранить");
+        save_to_database.setId("save_gen");
+        save_to_database.setOnAction(e -> save_transformator_to_database(into_database));
+        grid.add(save_to_database, 3, 23);
+
+        centerPanel.getChildren().addAll(scroll_pane);
+    }
+
+    @FXML
+    private void onAddAutoTransClick()
+    {
+        centerPanel.getChildren().clear();
+
+        GridPane grid = new GridPane();
+
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(10));
+
+        ScrollPane scroll_pane = new ScrollPane(grid);
+        scroll_pane.setId("my-scroll");
+
+        List<TextField> into_database = new ArrayList<>();
+
+        TextField name_of_transformator = create_textfield();
+        into_database.add(name_of_transformator);
+        grid.add(create_label("Тип\nтрансформатора:"),0 ,0);
+        grid.add(name_of_transformator,1 ,0);
+        grid.add(create_helper_label("Впиши название генератора"), 2, 0);
+
+        // Параметры
+        TextField s_nom = create_textfield();
+        into_database.add(s_nom);
+        grid.add(create_label("Sном (МВ * А):"), 0, 1);
+        grid.add(s_nom,1 ,1);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 1);
+
+        TextField s_nn = create_textfield();
+        into_database.add(s_nn);
+        grid.add(create_label("Sнн (МВ * А):"), 0, 2);
+        grid.add(s_nn,1 ,2);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 2);
+
+        // Напряжение обмотки
+        TextField bn = create_textfield();
+        into_database.add(bn);
+        grid.add(create_label("Напряжение BH\n(кВ):"), 0, 3);
+        grid.add(bn,1 ,3);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 3);
+
+        TextField cn = create_textfield();
+        into_database.add(cn);
+        grid.add(create_label("Напряжение CH\n(кВ):"), 0, 4);
+        grid.add(cn,1 ,4);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 4);
+
+        TextField hh = create_textfield();
+        into_database.add(hh);
+        grid.add(create_label("Напряжение HH\n(кВ):"), 0, 5);
+        grid.add(hh,1 ,5);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 5);
+
+        // Потери
+        TextField pxxA = create_textfield();
+        into_database.add(pxxA);
+        grid.add(create_label("Потери PxX-A\n(кВт):"), 0, 6);
+        grid.add(pxxA,1 ,6);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 6);
+
+        TextField pxxB = create_textfield();
+        into_database.add(pxxB);
+        grid.add(create_label("Потери PxX-B\n(кВт):"), 0, 7);
+        grid.add(pxxB,1 ,7);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 7);
+
+        TextField bhch = create_textfield();
+        into_database.add(bhch);
+        grid.add(create_label("Потери Pк.з\nBH-CH (кВт):"), 0, 8);
+        grid.add(bhch,1 ,8);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 8);
+
+        TextField bhhh = create_textfield();
+        into_database.add(bhhh);
+        grid.add(create_label("Потери Pк.з\nBH-HH (кВт):"), 0, 9);
+        grid.add(bhhh,1 ,9);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 9);
+
+        TextField chhh = create_textfield();
+        into_database.add(chhh);
+        grid.add(create_label("Потери Pк.з\nCH-HH (кВт):"), 0, 10);
+        grid.add(chhh,1 ,10);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 10);
+
+        TextField Ubhch = create_textfield();
+        into_database.add(Ubhch);
+        grid.add(create_label("Uк BH-CH (%):"), 0, 11);
+        grid.add(Ubhch,1 ,11);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, 11);
+
+        TextField Ubhhh = create_textfield();
+        into_database.add(Ubhhh);
+        grid.add(create_label("Uк BH-HH (%):"), 0, 12);
+        grid.add(Ubhhh,1 ,12);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, 12);
+
+        TextField Uchhh = create_textfield();
+        into_database.add(Uchhh);
+        grid.add(create_label("Uк CH-HH (%):"), 0, 13);
+        grid.add(Uchhh,1 ,13);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, 13);
+
+        TextField Ixx = create_textfield();
+        into_database.add(Ixx);
+        grid.add(create_label("Ix.x (%):"), 0, 14);
+        grid.add(Ixx,1 ,14);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, 14);
+
+        // Габариты
+        TextField dlina = create_textfield();
+        into_database.add(dlina);
+        grid.add(create_label("Длина (м):"), 0, 15);
+        grid.add(dlina,1 ,15);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, 15);
+
+        TextField shirina = create_textfield();
+        into_database.add(shirina);
+        grid.add(create_label("Ширина (м):"), 0, 16);
+        grid.add(shirina,1 ,16);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, 16);
+
+        TextField vysota_do = create_textfield();
+        into_database.add(vysota_do);
+        grid.add(create_label("Высота до\nкрышки (м):"), 0, 17);
+        grid.add(vysota_do,1 ,17);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, 17);
+
+        TextField vysota_posle = create_textfield();
+        into_database.add(vysota_posle);
+        grid.add(create_label("Высота полная\n(м):"), 0, 18);
+        grid.add(vysota_posle,1 ,18);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, 18);
+
+        // Масса
+        TextField maslo = create_textfield();
+        into_database.add(maslo);
+        grid.add(create_label("Масса масла (т):"), 0, 19);
+        grid.add(maslo,1 ,19);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, 19);
+
+        TextField transport = create_textfield();
+        into_database.add(transport);
+        grid.add(create_label("Масла\nтранспортная (м):"), 0, 20);
+        grid.add(transport,1 ,20);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, 20);
+
+        TextField polna = create_textfield();
+        into_database.add(polna);
+        grid.add(create_label("Масса полная (м):"), 0, 21);
+        grid.add(polna,1 ,21);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, 21);
+
+        TextField suma = create_textfield();
+        into_database.add(suma);
+        grid.add(create_label("Цена (грн):"), 0, 22);
+        grid.add(suma,1 ,22);
+        grid.add(create_helper_label("Впиши цену"), 2, 22);
+
+        Button save_to_database = new Button("Сохранить");
+        save_to_database.setId("save_gen");
+        save_to_database.setOnAction(e -> save_autotransformator_to_database(into_database));
+        grid.add(save_to_database, 3, 23);
+
         centerPanel.getChildren().addAll(scroll_pane);
     }
 
@@ -498,6 +670,156 @@ public class Task extends Application
         }
     }
 
+    private void save_autotransformator_to_database(List<TextField> into_database)
+    {
+        String url = "jdbc:postgresql://localhost:5432/KhPI";
+        String user = "postgres";
+        String password = "Ffdss321!";
+
+        String type = into_database.get(0).getText();
+        String s_nom = into_database.get(1).getText();
+        String s_nn = into_database.get(2).getText();
+        String bn = into_database.get(3).getText();
+        String cn = into_database.get(4).getText();
+        String hh = into_database.get(5).getText();
+        String pxxA = into_database.get(6).getText();
+        String pxxB = into_database.get(7).getText();
+        String bhch = into_database.get(8).getText();
+        String bhhh = into_database.get(9).getText();
+        String chhh = into_database.get(10).getText();
+        String Ubhch = into_database.get(11).getText();
+        String Ubhhh = into_database.get(12).getText();
+        String Uchhh = into_database.get(13).getText();
+        String Ixx = into_database.get(14).getText();
+        String dlina = into_database.get(15).getText();
+        String shirina = into_database.get(16).getText();
+        String vysota_do = into_database.get(17).getText();
+        String vysota_posle = into_database.get(18).getText();
+        String maslo = into_database.get(19).getText();
+        String transport = into_database.get(20).getText();
+        String polna = into_database.get(21).getText();
+        String suma = into_database.get(22).getText();
+
+        try (Connection connection = DriverManager.getConnection(url, user, password)) {
+            String query = "INSERT INTO autotransformators (type, s_nom, s_nn, bn, cn, hh, pxxA, pxxB, bhch, " +
+                    "bhhh, chhh, Ubhch, Ubhhh, Uchhh, Ixx, dlina, shirina, vysota_do, vysota_posle, maslo, transport, polna, " +
+                    "suma) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            try (PreparedStatement stmt = connection.prepareStatement(query)) {
+                stmt.setString(1, type);
+                stmt.setFloat(2, parse_float(s_nom));
+                stmt.setFloat(3, parse_float(s_nn));
+                stmt.setFloat(4, parse_float(bn));
+                stmt.setFloat(5, parse_float(cn));
+                stmt.setFloat(6, parse_float(hh));
+                stmt.setFloat(7, parse_float(pxxA));
+                stmt.setFloat(8, parse_float(pxxB));
+                stmt.setFloat(9, parse_float(bhch));
+                stmt.setFloat(10, parse_float(bhhh));
+                stmt.setFloat(11, parse_float(chhh));
+                stmt.setFloat(12, parse_float(Ubhch));
+                stmt.setFloat(13, parse_float(Ubhhh));
+                stmt.setFloat(14, parse_float(Uchhh));
+                stmt.setFloat(15, parse_float(Ixx));
+                stmt.setFloat(16, parse_float(dlina));
+                stmt.setFloat(17, parse_float(shirina));
+                stmt.setFloat(18, parse_float(vysota_do));
+                stmt.setFloat(19, parse_float(vysota_posle));
+                stmt.setFloat(20, parse_float(maslo));
+                stmt.setFloat(21, parse_float(transport));
+                stmt.setFloat(22, parse_float(polna));
+                stmt.setFloat(23, parse_float(suma));
+
+                int rowsAffected = stmt.executeUpdate();
+                System.out.println("Inserted " + rowsAffected + " rows into the database autotransformators");
+            }
+            catch (SQLException e)
+            {
+                System.out.println("Connection failed(autotransformators): " + e.getMessage());
+            }
+        }
+        catch (SQLException e)
+        {
+            System.out.println("Connection failed(autotransformators): " + e.getMessage());
+        }
+    }
+
+    private void save_transformator_to_database(List<TextField> into_database)
+    {
+        String url = "jdbc:postgresql://localhost:5432/KhPI";
+        String user = "postgres";
+        String password = "Ffdss321!";
+
+        String type = into_database.get(0).getText();
+        String s_nom = into_database.get(1).getText();
+        String s_nn = into_database.get(2).getText();
+        String bn = into_database.get(3).getText();
+        String cn = into_database.get(4).getText();
+        String hh = into_database.get(5).getText();
+        String pxxA = into_database.get(6).getText();
+        String pxxB = into_database.get(7).getText();
+        String bhch = into_database.get(8).getText();
+        String bhhh = into_database.get(9).getText();
+        String chhh = into_database.get(10).getText();
+        String Ubhch = into_database.get(11).getText();
+        String Ubhhh = into_database.get(12).getText();
+        String Uchhh = into_database.get(13).getText();
+        String Ixx = into_database.get(14).getText();
+        String dlina = into_database.get(15).getText();
+        String shirina = into_database.get(16).getText();
+        String vysota_do = into_database.get(17).getText();
+        String vysota_posle = into_database.get(18).getText();
+        String maslo = into_database.get(19).getText();
+        String transport = into_database.get(20).getText();
+        String polna = into_database.get(21).getText();
+        String suma = into_database.get(22).getText();
+
+        try (Connection connection = DriverManager.getConnection(url, user, password)) {
+            String query = "INSERT INTO transformators (type, s_nom, s_nn, bn, cn, hh, pxxA, pxxB, bhch, " +
+                    "bhhh, chhh, Ubhch, Ubhhh, Uchhh, Ixx, dlina, shirina, vysota_do, vysota_posle, maslo, transport, polna, " +
+                    "suma) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            try (PreparedStatement stmt = connection.prepareStatement(query)) {
+                stmt.setString(1, type);
+                stmt.setFloat(2, parse_float(s_nom));
+                stmt.setFloat(3, parse_float(s_nn));
+                stmt.setFloat(4, parse_float(bn));
+                stmt.setFloat(5, parse_float(cn));
+                stmt.setFloat(6, parse_float(hh));
+                stmt.setFloat(7, parse_float(pxxA));
+                stmt.setFloat(8, parse_float(pxxB));
+                stmt.setFloat(9, parse_float(bhch));
+                stmt.setFloat(10, parse_float(bhhh));
+                stmt.setFloat(11, parse_float(chhh));
+                stmt.setFloat(12, parse_float(Ubhch));
+                stmt.setFloat(13, parse_float(Ubhhh));
+                stmt.setFloat(14, parse_float(Uchhh));
+                stmt.setFloat(15, parse_float(Ixx));
+                stmt.setFloat(16, parse_float(dlina));
+                stmt.setFloat(17, parse_float(shirina));
+                stmt.setFloat(18, parse_float(vysota_do));
+                stmt.setFloat(19, parse_float(vysota_posle));
+                stmt.setFloat(20, parse_float(maslo));
+                stmt.setFloat(21, parse_float(transport));
+                stmt.setFloat(22, parse_float(polna));
+                stmt.setFloat(23, parse_float(suma));
+
+                int rowsAffected = stmt.executeUpdate();
+                System.out.println("Inserted " + rowsAffected + " rows into the database transformators");
+            }
+            catch (SQLException e)
+            {
+                System.out.println("Connection failed(transformators): " + e.getMessage());
+            }
+        }
+        catch (SQLException e)
+        {
+            System.out.println("Connection failed(transformators): " + e.getMessage());
+        }
+    }
+
     private void save_generator_to_database(List<TextField> into_database)
     {
         String url = "jdbc:postgresql://localhost:5432/KhPI";
@@ -583,17 +905,17 @@ public class Task extends Application
                 stmt.setString(33, turbine);
 
                 int rowsAffected = stmt.executeUpdate();
-                System.out.println("Inserted " + rowsAffected + " rows into the database.");
+                System.out.println("Inserted " + rowsAffected + " rows into the database generators");
 
             }
             catch (SQLException e)
             {
-                System.out.println("Error during insert: " + e.getMessage());
+                System.out.println("Error during insert(generators): " + e.getMessage());
             }
         }
         catch (SQLException e)
         {
-            System.out.println("Connection failed: " + e.getMessage());
+            System.out.println("Connection failed(generators): " + e.getMessage());
         }
     }
 
