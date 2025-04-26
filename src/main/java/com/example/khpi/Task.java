@@ -73,6 +73,50 @@ public class Task extends Application
     }
 
     @FXML
+    private void onAddTransformatorClick()
+    {
+        centerPanel.getChildren().clear();
+
+        GridPane grid = new GridPane();
+
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(10));
+
+        ScrollPane scroll_pane = new ScrollPane(grid);
+        scroll_pane.setId("my-scroll");
+
+        List<TextField> into_database = new ArrayList<>();
+
+        TextField name_of_transformator = create_textfield();
+        into_database.add(name_of_transformator);
+        grid.add(create_label("Тип трансформатора"),0 ,0);
+        grid.add(name_of_transformator,1 ,0);
+        grid.add(create_helper_label("Впиши название генератора"), 2, 0);
+
+        // Параметры
+        TextField s_nom = create_textfield();
+        into_database.add(s_nom);
+        grid.add(create_label("Sном (МВ * А):"), 0, 1);
+        grid.add(s_nom,1 ,1);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 1);
+
+        TextField s_nn = create_textfield();
+        into_database.add(s_nn);
+        grid.add(create_label("Sнн (МВ * А)"), 0, 2);
+        grid.add(s_nn,1 ,2);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 2);
+
+        TextField bn = create_textfield();
+        into_database.add(bn);
+        grid.add(create_label(""), 0, 3);
+        grid.add(bn,1 ,3);
+        grid.add(create_helper_label(""), 2, 3);
+
+        centerPanel.getChildren().addAll(scroll_pane);
+    }
+
+    @FXML
     private void onAddGeneratorClick()
     {
         centerPanel.getChildren().clear();

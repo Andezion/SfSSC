@@ -22,6 +22,7 @@
     <right>
         <VBox fx:id="rightPanel" spacing="10" style="-fx-padding: 10; -fx-background-color: #7bf3e9;" prefWidth="100">
             <Button text="Добавить&#10;генератор" styleClass="btn-new" onAction="#onAddGeneratorClick"/>
+            <Button text="Добавить&#10;трансформатор" styleClass="btn-new" onAction="#onAddTransformatorClick"/>
         </VBox>
     </right>
 </BorderPane>
