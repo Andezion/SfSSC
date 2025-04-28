@@ -23,6 +23,43 @@
     -fx-effect: dropshadow(three-pass-box, rgba(65, 93, 152, 0.8), 6, 0.0, 0, 2);
 }
 
+.drop
+{
+    -fx-background-color: #0B63F6;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 6 12;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 2, 0.0, 0, 1);
+    -fx-pref-width: 80;
+    -fx-pref-height: 50;
+    -fx-text-alignment: center;
+    -fx-content-display: center;
+}
+
+.drop:hover
+{
+    -fx-effect: dropshadow(three-pass-box, rgba(65, 93, 152, 0.8), 6, 0.0, 0, 2);
+}
+
+.menu-item
+{
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 12;
+    -fx-background-radius: 0;
+    -fx-pref-width: 80;
+    -fx-alignment: center;
+}
+
+.menu-item:hover
+{
+    -fx-text-fill: white;
+}
 
 
 #save_gen

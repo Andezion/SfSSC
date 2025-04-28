@@ -21,6 +21,15 @@
 
     <right>
         <VBox fx:id="rightPanel" spacing="10" style="-fx-padding: 10; -fx-background-color: #5bc3b9;" prefWidth="100">
+
+            <MenuButton text="Добавить" styleClass="drop">
+                <items>
+                    <MenuItem text="Генератор" onAction="#onAddGeneratorClick"/>
+                    <MenuItem text="Генератор1" onAction="#onAddGeneratorClick1"/>
+                    <MenuItem text="Генератор2" onAction="#onAddGeneratorClick2"/>
+                </items>
+            </MenuButton>
+
             <Button text="Добавить&#10;генератор" styleClass="btn-new" onAction="#onAddGeneratorClick"/>
             <Button text="Добавить&#10;трансформ" styleClass="btn-new" onAction="#onAddTransformatorClick"/>
             <Button text="Добавить&#10;авто.транс" styleClass="btn-new" onAction="#onAddAutoTransClick"/>

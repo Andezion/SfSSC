@@ -638,6 +638,18 @@ public class Task extends Application
         centerPanel.getChildren().addAll(scroll_pane);
     }
 
+    @FXML
+    private void onAddGeneratorClick1()
+    {
+
+    }
+
+    @FXML
+    private void onAddGeneratorClick2()
+    {
+
+    }
+
     private float parse_float(String value)
     {
         if (value == null || value.trim().isEmpty())
