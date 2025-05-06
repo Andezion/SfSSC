@@ -77,6 +77,8 @@ public class Task extends Application
     {
         centerPanel.getChildren().clear();
 
+        int helper = 0;
+
         GridPane grid = new GridPane();
 
         grid.setHgap(10);
@@ -88,153 +90,202 @@ public class Task extends Application
 
         List<TextField> into_database = new ArrayList<>();
 
+        grid.add(create_helper_label("Трансформатор"), 0, helper);
+        helper++;
+
         TextField name_of_transformator = create_textfield();
         into_database.add(name_of_transformator);
-        grid.add(create_label("Тип\nтрансформатора:"),0 ,0);
-        grid.add(name_of_transformator,1 ,0);
-        grid.add(create_helper_label("Впиши название трансформатора"), 2, 0);
+        grid.add(create_label("Тип\nтрансформатора:"),0 ,helper);
+        grid.add(name_of_transformator,1 ,helper);
+        grid.add(create_helper_label("Впиши название трансформатора"), 2, helper);
+
+        helper++;
 
         // Параметры
         TextField s_nom = create_textfield();
         into_database.add(s_nom);
-        grid.add(create_label("Sном (МВ * А):"), 0, 1);
-        grid.add(s_nom,1 ,1);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 1);
+        grid.add(create_label("Sном (МВ * А):"), 0, helper);
+        grid.add(s_nom,1 ,helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField s_nn = create_textfield();
         into_database.add(s_nn);
-        grid.add(create_label("Sнн (МВ * А):"), 0, 2);
-        grid.add(s_nn,1 ,2);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 2);
+        grid.add(create_label("Sнн (МВ * А):"), 0, helper);
+        grid.add(s_nn,1 ,helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         // Напряжение обмотки
         TextField bn = create_textfield();
         into_database.add(bn);
-        grid.add(create_label("Напряжение BH\n(кВ):"), 0, 3);
-        grid.add(bn,1 ,3);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 3);
+        grid.add(create_label("Напряжение BH\n(кВ):"), 0, helper);
+        grid.add(bn,1 ,helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField cn = create_textfield();
         into_database.add(cn);
-        grid.add(create_label("Напряжение CH\n(кВ):"), 0, 4);
-        grid.add(cn,1 ,4);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 4);
+        grid.add(create_label("Напряжение CH\n(кВ):"), 0, helper);
+        grid.add(cn,1 ,helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField hh = create_textfield();
         into_database.add(hh);
-        grid.add(create_label("Напряжение HH\n(кВ):"), 0, 5);
-        grid.add(hh,1 ,5);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 5);
+        grid.add(create_label("Напряжение HH\n(кВ):"), 0, helper);
+        grid.add(hh,1 ,helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         // Потери
         TextField pxxA = create_textfield();
         into_database.add(pxxA);
-        grid.add(create_label("Потери PxX-A\n(кВт):"), 0, 6);
-        grid.add(pxxA,1 ,6);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 6);
+        grid.add(create_label("Потери PxX-A\n(кВт):"), 0, helper);
+        grid.add(pxxA,1 ,helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField pxxB = create_textfield();
         into_database.add(pxxB);
-        grid.add(create_label("Потери PxX-B\n(кВт):"), 0, 7);
-        grid.add(pxxB,1 ,7);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 7);
+        grid.add(create_label("Потери PxX-B\n(кВт):"), 0, helper);
+        grid.add(pxxB,1 ,helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField bhch = create_textfield();
         into_database.add(bhch);
-        grid.add(create_label("Потери Pк.з\nBH-CH (кВт):"), 0, 8);
-        grid.add(bhch,1 ,8);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 8);
+        grid.add(create_label("Потери Pк.з\nBH-CH (кВт):"), 0, helper);
+        grid.add(bhch,1 ,helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField bhhh = create_textfield();
         into_database.add(bhhh);
-        grid.add(create_label("Потери Pк.з\nBH-HH (кВт):"), 0, 9);
-        grid.add(bhhh,1 ,9);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 9);
+        grid.add(create_label("Потери Pк.з\nBH-HH (кВт):"), 0, helper);
+        grid.add(bhhh,1 ,helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField chhh = create_textfield();
         into_database.add(chhh);
-        grid.add(create_label("Потери Pк.з\nCH-HH (кВт):"), 0, 10);
-        grid.add(chhh,1 ,10);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 10);
+        grid.add(create_label("Потери Pк.з\nCH-HH (кВт):"), 0, helper);
+        grid.add(chhh,1 ,helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField Ubhch = create_textfield();
         into_database.add(Ubhch);
-        grid.add(create_label("Uк BH-CH (%):"), 0, 11);
-        grid.add(Ubhch,1 ,11);
-        grid.add(create_helper_label("Впиши число больше 0"), 2, 11);
+        grid.add(create_label("Uк BH-CH (%):"), 0, helper);
+        grid.add(Ubhch,1 ,helper);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, helper);
+
+        helper++;
 
         TextField Ubhhh = create_textfield();
         into_database.add(Ubhhh);
-        grid.add(create_label("Uк BH-HH (%):"), 0, 12);
-        grid.add(Ubhhh,1 ,12);
-        grid.add(create_helper_label("Впиши число больше 0"), 2, 12);
+        grid.add(create_label("Uк BH-HH (%):"), 0, helper);
+        grid.add(Ubhhh,1 ,helper);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, helper);
+
+        helper++;
 
         TextField Uchhh = create_textfield();
         into_database.add(Uchhh);
-        grid.add(create_label("Uк CH-HH (%):"), 0, 13);
-        grid.add(Uchhh,1 ,13);
-        grid.add(create_helper_label("Впиши число больше 0"), 2, 13);
+        grid.add(create_label("Uк CH-HH (%):"), 0, helper);
+        grid.add(Uchhh,1 ,helper);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, helper);
+
+        helper++;
 
         TextField Ixx = create_textfield();
         into_database.add(Ixx);
-        grid.add(create_label("Ix.x (%):"), 0, 14);
-        grid.add(Ixx,1 ,14);
-        grid.add(create_helper_label("Впиши число больше 0"), 2, 14);
+        grid.add(create_label("Ix.x (%):"), 0, helper);
+        grid.add(Ixx,1 ,helper);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, helper);
+
+        helper++;
 
         // Габариты
         TextField dlina = create_textfield();
         into_database.add(dlina);
-        grid.add(create_label("Длина (м):"), 0, 15);
-        grid.add(dlina,1 ,15);
-        grid.add(create_helper_label("Впиши число больше 0"), 2, 15);
+        grid.add(create_label("Длина (м):"), 0, helper);
+        grid.add(dlina,1 ,helper);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, helper);
+
+        helper++;
 
         TextField shirina = create_textfield();
         into_database.add(shirina);
-        grid.add(create_label("Ширина (м):"), 0, 16);
-        grid.add(shirina,1 ,16);
-        grid.add(create_helper_label("Впиши число больше 0"), 2, 16);
+        grid.add(create_label("Ширина (м):"), 0, helper);
+        grid.add(shirina,1 ,helper);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, helper);
+
+        helper++;
 
         TextField vysota_do = create_textfield();
         into_database.add(vysota_do);
-        grid.add(create_label("Высота до\nкрышки (м):"), 0, 17);
-        grid.add(vysota_do,1 ,17);
-        grid.add(create_helper_label("Впиши число больше 0"), 2, 17);
+        grid.add(create_label("Высота до\nкрышки (м):"), 0, helper);
+        grid.add(vysota_do,1 ,helper);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, helper);
+
+        helper++;
 
         TextField vysota_posle = create_textfield();
         into_database.add(vysota_posle);
-        grid.add(create_label("Высота полная\n(м):"), 0, 18);
-        grid.add(vysota_posle,1 ,18);
-        grid.add(create_helper_label("Впиши число больше 0"), 2, 18);
+        grid.add(create_label("Высота полная\n(м):"), 0, helper);
+        grid.add(vysota_posle,1 ,helper);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, helper);
+
+        helper++;
 
         // Масса
         TextField maslo = create_textfield();
         into_database.add(maslo);
-        grid.add(create_label("Масса масла (т):"), 0, 19);
-        grid.add(maslo,1 ,19);
-        grid.add(create_helper_label("Впиши число больше 0"), 2, 19);
+        grid.add(create_label("Масса масла (т):"), 0, helper);
+        grid.add(maslo,1 ,helper);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, helper);
+
+        helper++;
 
         TextField transport = create_textfield();
         into_database.add(transport);
-        grid.add(create_label("Масла\nтранспортная (м):"), 0, 20);
-        grid.add(transport,1 ,20);
-        grid.add(create_helper_label("Впиши число больше 0"), 2, 20);
+        grid.add(create_label("Масла\nтранспортная (м):"), 0, helper);
+        grid.add(transport,1 ,helper);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, helper);
+
+        helper++;
 
         TextField polna = create_textfield();
         into_database.add(polna);
-        grid.add(create_label("Масса полная (м):"), 0, 21);
-        grid.add(polna,1 ,21);
-        grid.add(create_helper_label("Впиши число больше 0"), 2, 21);
+        grid.add(create_label("Масса полная (м):"), 0, helper);
+        grid.add(polna,1 ,helper);
+        grid.add(create_helper_label("Впиши число больше 0"), 2, helper);
+
+        helper++;
 
         TextField suma = create_textfield();
         into_database.add(suma);
-        grid.add(create_label("Цена (грн):"), 0, 22);
-        grid.add(suma,1 ,22);
-        grid.add(create_helper_label("Впиши цену"), 2, 22);
+        grid.add(create_label("Цена (грн):"), 0, helper);
+        grid.add(suma,1 ,helper);
+        grid.add(create_helper_label("Впиши цену"), 2, helper);
+
+        helper++;
 
         Button save_to_database = new Button("Сохранить");
         save_to_database.setId("save_gen");
         save_to_database.setOnAction(e -> save_transformator_to_database(into_database));
-        grid.add(save_to_database, 3, 23);
+        grid.add(save_to_database, 2, helper);
 
         centerPanel.getChildren().addAll(scroll_pane);
     }
