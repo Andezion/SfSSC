@@ -92,7 +92,7 @@ public class Task extends Application
         into_database.add(name_of_transformator);
         grid.add(create_label("Тип\nтрансформатора:"),0 ,0);
         grid.add(name_of_transformator,1 ,0);
-        grid.add(create_helper_label("Впиши название генератора"), 2, 0);
+        grid.add(create_helper_label("Впиши название трансформатора"), 2, 0);
 
         // Параметры
         TextField s_nom = create_textfield();
@@ -257,9 +257,9 @@ public class Task extends Application
 
         TextField name_of_transformator = create_textfield();
         into_database.add(name_of_transformator);
-        grid.add(create_label("Тип\nтрансформатора:"),0 ,0);
+        grid.add(create_label("Тип авто-\nтрансформатора:"),0 ,0);
         grid.add(name_of_transformator,1 ,0);
-        grid.add(create_helper_label("Впиши название генератора"), 2, 0);
+        grid.add(create_helper_label("Впиши название автотрансформатора"), 2, 0);
 
         // Параметры
         TextField s_nom = create_textfield();
