@@ -814,6 +814,8 @@ public class Task extends Application
     {
         centerPanel.getChildren().clear();
 
+        int helper = 0;
+
         GridPane grid = new GridPane();
 
         grid.setHgap(10);
@@ -825,218 +827,285 @@ public class Task extends Application
 
         List<TextField> into_database = new ArrayList<>();
 
+        grid.add(create_helper_label("Генераторы для ГЭС"), 0, helper);
+        helper++;
+
         TextField name_of_generator = create_textfield();
         into_database.add(name_of_generator);
-        grid.add(create_label("Тип генератора:"), 0, 0);
-        grid.add(name_of_generator, 1, 0);
-        grid.add(create_helper_label("Впиши название генератора"), 2, 0);
-        //grid.add(create_error_label("A - Я"), 3, 0);
+        grid.add(create_label("Тип генератора:"), 0, helper);
+        grid.add(name_of_generator, 1, helper);
+        grid.add(create_helper_label("Впиши название генератора"), 2, helper);
+
+        helper++;
 
         // Параметры
         TextField s_nom = create_textfield();
         into_database.add(s_nom);
-        grid.add(create_label("Sном (МВ * А):"), 0, 1);
-        grid.add(s_nom, 1, 1);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 1);
+        grid.add(create_label("Sном (МВ * А):"), 0, helper);
+        grid.add(s_nom, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField p_nom = create_textfield();
         into_database.add(p_nom);
-        grid.add(create_label("Pном (МВт):"), 0, 2);
-        grid.add(p_nom, 1, 2);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 2);
+        grid.add(create_label("Pном (МВт):"), 0, helper);
+        grid.add(p_nom, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField cos_f_nom = create_textfield();
         into_database.add(cos_f_nom);
-        grid.add(create_label("cosφном (%):"), 0, 3);
-        grid.add(cos_f_nom, 1, 3);
-        grid.add(create_helper_label("Впиши число от 0 до 100"), 2, 3);
+        grid.add(create_label("cosφном (%):"), 0, helper);
+        grid.add(cos_f_nom, 1, helper);
+        grid.add(create_helper_label("Впиши число от 0 до 100"), 2, helper);
+
+        helper++;
 
         TextField u_nom = create_textfield();
         into_database.add(u_nom);
-        grid.add(create_label("Uном (кВ):"), 0, 4);
-        grid.add(u_nom, 1, 4);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 4);
+        grid.add(create_label("Uном (кВ):"), 0, helper);
+        grid.add(u_nom, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField i_nom = create_textfield();
         into_database.add(i_nom);
-        grid.add(create_label("Iном (кА):"), 0, 5);
-        grid.add(i_nom, 1, 5);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 5);
+        grid.add(create_label("Iном (кА):"), 0, helper);
+        grid.add(i_nom, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField n_nom = create_textfield();
         into_database.add(n_nom);
-        grid.add(create_label("nном (об/мин):"), 0, 6);
-        grid.add(n_nom, 1, 6);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 6);
+        grid.add(create_label("nном (об/мин):"), 0, helper);
+        grid.add(n_nom, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField n_ug_n_no = create_textfield();
         into_database.add(n_ug_n_no);
-        grid.add(create_label("nуг/nном:"), 0, 7);
-        grid.add(n_ug_n_no, 1, 7);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 7);
+        grid.add(create_label("nуг/nном:"), 0, helper);
+        grid.add(n_ug_n_no, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField okz = create_textfield();
         into_database.add(okz);
-        grid.add(create_label("ОКЗ:"), 0, 8);
-        grid.add(okz, 1, 8);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 8);
+        grid.add(create_label("ОКЗ:"), 0, helper);
+        grid.add(okz, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         // Индуктивные сопротивления
         TextField x_dd = create_textfield();
         into_database.add(x_dd);
-        grid.add(create_label("x''d:"), 0, 9);
-        grid.add(x_dd, 1, 9);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 9);
+        grid.add(create_label("x''d:"), 0, helper);
+        grid.add(x_dd, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField x_d = create_textfield();
         into_database.add(x_d);
-        grid.add(create_label("x'd:"), 0, 10);
-        grid.add(x_d, 1, 10);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 10);
+        grid.add(create_label("x'd:"), 0, helper);
+        grid.add(x_d, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField x_d_long = create_textfield();
         into_database.add(x_d_long);
-        grid.add(create_label("xd:"), 0, 11);
-        grid.add(x_d_long, 1, 11);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 11);
+        grid.add(create_label("xd:"), 0, helper);
+        grid.add(x_d_long, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField x_qq = create_textfield();
         into_database.add(x_qq);
-        grid.add(create_label("x''q:"), 0, 12);
-        grid.add(x_qq, 1, 12);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 12);
+        grid.add(create_label("x''q:"), 0, helper);
+        grid.add(x_qq, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField x_q = create_textfield();
         into_database.add(x_q);
-        grid.add(create_label("xq:"), 0, 13);
-        grid.add(x_q, 1, 13);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 13);
+        grid.add(create_label("xq:"), 0, helper);
+        grid.add(x_q, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField x2 = create_textfield();
         into_database.add(x2);
-        grid.add(create_label("x2:"), 0, 14);
-        grid.add(x2, 1, 14);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 14);
+        grid.add(create_label("x2:"), 0, helper);
+        grid.add(x2, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField x0 = create_textfield();
         into_database.add(x0);
-        grid.add(create_label("x0:"), 0, 15);
-        grid.add(x0, 1, 15);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 15);
+        grid.add(create_label("x0:"), 0, helper);
+        grid.add(x0, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         // Время
         TextField t_d0 = create_textfield();
         into_database.add(t_d0);
-        grid.add(create_label("Td0 (с):"), 0, 16);
-        grid.add(t_d0, 1, 16);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 16);
+        grid.add(create_label("Td0 (с):"), 0, helper);
+        grid.add(t_d0, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         // Возбуждение
         TextField if_nom = create_textfield();
         into_database.add(if_nom);
-        grid.add(create_label("Ifном (А):"), 0, 17);
-        grid.add(if_nom, 1, 17);
-        grid.add(create_helper_label("Впиши целое число"), 2, 17);
+        grid.add(create_label("Ifном (А):"), 0, helper);
+        grid.add(if_nom, 1, helper);
+        grid.add(create_helper_label("Впиши целое число"), 2, helper);
+
+        helper++;
 
         TextField if_nom_ix = create_textfield();
         into_database.add(if_nom_ix);
-        grid.add(create_label("Ifном/Ix (x):"), 0, 18);
-        grid.add(if_nom_ix, 1, 18);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 18);
+        grid.add(create_label("Ifном/Ix (x):"), 0, helper);
+        grid.add(if_nom_ix, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField uf_nom = create_textfield();
         into_database.add(uf_nom);
-        grid.add(create_label("Ufном (В):"), 0, 19);
-        grid.add(uf_nom, 1, 19);
-        grid.add(create_helper_label("Впиши целое число"), 2, 19);
+        grid.add(create_label("Ufном (В):"), 0, helper);
+        grid.add(uf_nom, 1, helper);
+        grid.add(create_helper_label("Впиши целое число"), 2, helper);
+
+        helper++;
 
         TextField forcing_ratio = create_textfield();
         into_database.add(forcing_ratio);
-        grid.add(create_label("Кратность\nфорсировки:"), 0, 20);
-        grid.add(forcing_ratio, 1, 20);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 20);
+        grid.add(create_label("Кратность\nфорсировки:"), 0, helper);
+        grid.add(forcing_ratio, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField excitation_system = create_textfield();
         into_database.add(excitation_system);
-        grid.add(create_label("Система\nвозбуждения:"), 0, 21);
-        grid.add(excitation_system, 1, 21);
-        grid.add(create_helper_label("Впиши название системы"), 2, 21);
+        grid.add(create_label("Система\nвозбуждения:"), 0, helper);
+        grid.add(excitation_system, 1, helper);
+        grid.add(create_helper_label("Впиши название системы"), 2, helper);
+
+        helper++;
 
         // Коэффициенты
         TextField n_percent = create_textfield();
         into_database.add(n_percent);
-        grid.add(create_label("ŋ (%):"), 0, 22);
-        grid.add(n_percent, 1, 22);
-        grid.add(create_helper_label("Впиши число от 0 до 100"), 2, 22);
+        grid.add(create_label("ŋ (%):"), 0, helper);
+        grid.add(n_percent, 1, helper);
+        grid.add(create_helper_label("Впиши число от 0 до 100"), 2, helper);
+
+        helper++;
 
         TextField j = create_textfield();
         into_database.add(j);
-        grid.add(create_label("J (т * m2 * 0.25):"), 0, 23);
-        grid.add(j, 1, 23);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 23);
+        grid.add(create_label("J (т * m2 * 0.25):"), 0, helper);
+        grid.add(j, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         // Масса
         TextField mass_stator = create_textfield();
         into_database.add(mass_stator);
-        grid.add(create_label("Масса ротора (т):"), 0, 24);
-        grid.add(mass_stator, 1, 24);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 24);
+        grid.add(create_label("Масса ротора (т):"), 0, helper);
+        grid.add(mass_stator, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField mass_rotor = create_textfield();
         into_database.add(mass_rotor);
-        grid.add(create_label("Масса статора (т):"), 0, 25);
-        grid.add(mass_rotor, 1, 25);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 25);
+        grid.add(create_label("Масса статора (т):"), 0, helper);
+        grid.add(mass_rotor, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
+
+        helper++;
 
         TextField mass_total = create_textfield();
         into_database.add(mass_total);
-        grid.add(create_label("Масса общая (т):"), 0, 26);
-        grid.add(mass_total, 1, 26);
-        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, 26);
+        grid.add(create_label("Масса общая (т):"), 0, helper);
+        grid.add(mass_total, 1, helper);
+        grid.add(create_helper_label("Впиши число, если дробное то используй - \".\""), 2, helper);
 
+        helper++;
 
         // Размеры
         TextField stator_diameter = create_textfield();
         into_database.add(stator_diameter);
-        grid.add(create_label("Диаметр статора\nпо корпусу (мм):"), 0, 27);
-        grid.add(stator_diameter, 1, 27);
-        grid.add(create_helper_label("Впиши целое число"), 2, 27);
+        grid.add(create_label("Диаметр статора\nпо корпусу (мм):"), 0, helper);
+        grid.add(stator_diameter, 1, helper);
+        grid.add(create_helper_label("Впиши целое число"), 2, helper);
+
+        helper++;
 
         TextField rotor_diameter = create_textfield();
         into_database.add(rotor_diameter);
-        grid.add(create_label("Диаметр ротора\n(мм):"), 0, 28);
-        grid.add(rotor_diameter, 1, 28);
-        grid.add(create_helper_label("Впиши целое число"), 2, 28);
+        grid.add(create_label("Диаметр ротора\n(мм):"), 0, helper);
+        grid.add(rotor_diameter, 1, helper);
+        grid.add(create_helper_label("Впиши целое число"), 2, helper);
+
+        helper++;
 
         TextField generator_length = create_textfield();
         into_database.add(generator_length);
-        grid.add(create_label("Полная высота\n(длинна) генер-\nатора (мм):"), 0, 29);
-        grid.add(generator_length, 1, 29);
-        grid.add(create_helper_label("Впиши целое число"), 2, 29);
+        grid.add(create_label("Полная высота\n(длинна) генер-\nатора (мм):"), 0, helper);
+        grid.add(generator_length, 1, helper);
+        grid.add(create_helper_label("Впиши целое число"), 2, helper);
+
+        helper++;
 
         // Параметры какие-то
         TextField execution_type = create_textfield();
         into_database.add(execution_type);
-        grid.add(create_label("Исполнение:"), 0, 30);
-        grid.add(execution_type, 1, 30);
-        grid.add(create_helper_label("Впиши тип исполнения"), 2, 30);
+        grid.add(create_label("Исполнение:"), 0, helper);
+        grid.add(execution_type, 1, helper);
+        grid.add(create_helper_label("Впиши тип исполнения"), 2, helper);
+
+        helper++;
 
         TextField exciter_type = create_textfield();
         into_database.add(exciter_type);
-        grid.add(create_label("Тип возбудителя:"), 0, 31);
-        grid.add(exciter_type, 1, 31);
-        grid.add(create_helper_label("Впиши тип возбудителя"), 2, 31);
+        grid.add(create_label("Тип возбудителя:"), 0, helper);
+        grid.add(exciter_type, 1, helper);
+        grid.add(create_helper_label("Впиши тип возбудителя"), 2, helper);
+
+        helper++;
 
         TextField turbine = create_textfield();
         into_database.add(turbine);
-        grid.add(create_label("Турбина:"), 0, 32);
-        grid.add(turbine, 1, 32);
-        grid.add(create_helper_label("Впиши тип турбины"), 2, 32);
+        grid.add(create_label("Турбина:"), 0, helper);
+        grid.add(turbine, 1, helper);
+        grid.add(create_helper_label("Впиши тип турбины"), 2, helper);
+
+        helper++;
 
         Button save_to_database = new Button("Сохранить");
         save_to_database.setId("save_gen");
         save_to_database.setOnAction(e -> save_generator1_to_database(into_database, 1));
-        grid.add(save_to_database, 3, 33);
+        grid.add(save_to_database, 3, helper);
 
         centerPanel.getChildren().addAll(scroll_pane);
     }
