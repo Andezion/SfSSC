@@ -510,7 +510,7 @@ public class Task extends Application
 
     @FXML
     private void onAddGeneratorClick()
-    {
+     {
         centerPanel.getChildren().clear();
 
         int helper = 0;
