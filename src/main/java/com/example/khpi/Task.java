@@ -24,6 +24,16 @@ import java.util.Objects;
 
 public class Task extends Application
 {
+    public TextField voltageLocalField;
+    public TextField voltageSystemField;
+    public TextField loadWinterField;
+    public TextField loadSummerField;
+    public TextField tmaxField;
+    public TextField cosPhiNField;
+    public TextField cosPhiVPField;
+    public TextField numberGenerators;
+    public TextField powerGenerator;
+
     @FXML
     private VBox rightPanel;
     @FXML
@@ -42,6 +52,18 @@ public class Task extends Application
 
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void handle_user_input()
+    {
+        try
+        {
+
+        }
+        catch (NumberFormatException e)
+        {
+
+        }
     }
 
     private TextField create_textfield()

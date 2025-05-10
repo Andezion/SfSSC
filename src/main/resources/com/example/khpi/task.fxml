@@ -6,11 +6,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.text.Text?>
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.khpi.Task">
     <left>
         <VBox spacing="10" style="-fx-padding: 10; -fx-background-color: #62b9f4;" prefWidth="200">
 
-            <VBox spacing="8"> <Label text="Напруга місцевого району, кВ" styleClass="input-label"/>
+            <VBox spacing="8">
+
+                <Label text="Количество генераторов, шт" styleClass="input-label"/>
+                <TextField fx:id="numberGenerators" styleClass="input-field"/>
+
+                <Label text="Мощность, МВт" styleClass="input-label"/>
+                <TextField fx:id="powerGenerator" styleClass="input-field"/>
+
+                <Label text="Напруга місцевого району, кВ" styleClass="input-label"/>
                 <TextField fx:id="voltageLocalField" styleClass="input-field"/>
 
                 <Label text="Напруга системи, кВ" styleClass="input-label"/>
