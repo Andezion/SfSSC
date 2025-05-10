@@ -24,28 +24,26 @@
 }
 
 .input-label {
-    -fx-text-fill: #2c3e50; /* Трохи темніший колір тексту для контрасту */
-    -fx-font-size: 12px; /* Розмір шрифту */
-    -fx-font-weight: bold; /* Жирний шрифт */
-    /* Можна додати відступи, якщо потрібно, наприклад, зверху та знизу */
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
     -fx-padding: 5 0 2 0;
 }
 
-/* Стилі для полів введення */
 .input-field {
-    -fx-font-size: 12px; /* Розмір шрифту, як у мітки */
-    -fx-padding: 6 8; /* Внутрішній відступ: зверху/знизу 6px, з боків 8px */
-    -fx-border-color: #bdc3c7; /* Колір рамки - світло-сірий */
-    -fx-border-radius: 5; /* Заокруглення кутів рамки */
-    -fx-background-color: #ecf0f1; /* Дуже світлий фон поля */
+    -fx-font-size: 12px;
+    -fx-padding: 6 8;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+    -fx-background-color: #ecf0f1;
     -fx-background-radius: 5;
 }
 
-/* Стиль поля введення при фокусі (коли користувач клацнув на ньому) */
-.input-field:focused {
-    -fx-border-color: #3498db; /* Яскравіший синій колір рамки при фокусі */
-    -fx-background-color: #ffffff; /* Білий фон при фокусі */
-    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.4), 8, 0.0, 0, 0); /* М'яка тінь при фокусі */
+.input-field:focused
+{
+    -fx-border-color: #3498db;
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.4), 8, 0.0, 0, 0);
 }
 
 #save_gen

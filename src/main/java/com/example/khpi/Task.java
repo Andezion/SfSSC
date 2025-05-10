@@ -33,6 +33,7 @@ public class Task extends Application
     public TextField cosPhiVPField;
     public TextField numberGenerators;
     public TextField powerGenerator;
+    public TextField sShortCircuitField;
 
     @FXML
     private VBox rightPanel;
@@ -96,7 +97,7 @@ public class Task extends Application
 
     @FXML
     private void onAddTransformatorClick()
-     {
+    {
         centerPanel.getChildren().clear();
 
         int helper = 0;
