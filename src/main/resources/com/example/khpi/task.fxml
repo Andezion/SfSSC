@@ -10,6 +10,33 @@
     <left>
         <VBox spacing="10" style="-fx-padding: 10; -fx-background-color: #62b9f4;" prefWidth="200">
 
+            <VBox spacing="8"> <Label text="Напруга місцевого району, кВ" styleClass="input-label"/>
+                <TextField fx:id="voltageLocalField" styleClass="input-field"/>
+
+                <Label text="Напруга системи, кВ" styleClass="input-label"/>
+                <TextField fx:id="voltageSystemField" styleClass="input-field"/>
+
+                <Label text="Навантаж. Місц. району, МВт (Зима)" styleClass="input-label"/>
+                <TextField fx:id="loadWinterField" styleClass="input-field"/>
+
+                <Label text="Навантаж. Місц. району, МВт (Лето)" styleClass="input-label"/>
+                <TextField fx:id="loadSummerField" styleClass="input-field"/>
+
+                <Label text="Тмакс, год" styleClass="input-label"/>
+                <TextField fx:id="tmaxField" styleClass="input-field"/>
+
+                <Label text="cos φн" styleClass="input-label"/>
+                <TextField fx:id="cosPhiNField" styleClass="input-field"/>
+
+                <Label text="cos φвп" styleClass="input-label"/>
+                <TextField fx:id="cosPhiVPField" styleClass="input-field"/>
+
+                <Label text='S", МВА' styleClass="input-label"/> <TextField fx:id="sShortCircuitField" styleClass="input-field"/>
+
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
         </VBox>
     </left>
 
